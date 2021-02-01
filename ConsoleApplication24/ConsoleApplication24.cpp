@@ -56,7 +56,7 @@ void oper::crt_tree() {
 		}
 		else {
 			el* tmp = root;
-			while ((tmp != NULL)&(q==0)) {
+			while ((tmp != NULL) && (q==0)) {
 				if (tmp->a > a) {
 					if (tmp->left == NULL) {
 						tmp->left = temp;
@@ -101,7 +101,7 @@ void oper::add() {
 	}
 	else {
 		el* tmp = root;
-		while ((tmp != NULL)&(q==0)) {
+		while ((tmp != NULL) && (q==0)) {
 			if (tmp->a > a) {
 				if (tmp->left == NULL) {
 					tmp->left = temp;
@@ -226,7 +226,7 @@ void oper::delet(int num) {
 		cout << "Нет ни одного элемента!\n";
 	}
 	else {
-		while ((tmp != NULL) & (p == 0)) {
+		while ((tmp != NULL) && (p == 0)) {
 			if (tmp->a == num) {
 				p = 1;
 				oper::obhodDelet(tmp);
@@ -342,7 +342,7 @@ void oper::get_height() {
 
 
 void oper::obhodQuanLeaf(el* tmp) {
-	if ((tmp->left == NULL)&(tmp->right == NULL)) { quanLeaf = quanLeaf + 1; };
+	if ((tmp->left == NULL) && (tmp->right == NULL)) { quanLeaf = quanLeaf + 1; };
 	if (tmp->left != NULL) {
 		tmp = tmp->left;
 		l.obhodQuanLeaf(tmp);
@@ -383,10 +383,10 @@ void oper::predel(int num) {
 		cout << "Нет ни одного элемента!\n";
 	}
 	else {
-		while ((tmp != NULL)&(p == 0)) {
+		while ((tmp != NULL) && (p == 0)) {
 			if (tmp->a == num) {
 				p = 1;
-				if ((tmp->left != NULL)&(tmp->right == NULL)) {
+				if ((tmp->left != NULL) && (tmp->right == NULL)) {
 					if (tmp->up != NULL) {
 						tmp->left->up = tmp->up;
 						if (tmp->up->a > tmp->a) {
@@ -398,7 +398,7 @@ void oper::predel(int num) {
 					}
 					else {root = tmp->left; }
 				}
-				else if ((tmp->right != NULL)&(tmp->left == NULL)) {
+				else if ((tmp->right != NULL) && (tmp->left == NULL)) {
 					if (tmp->up != NULL) {
 						tmp->right->up = tmp->up;
 						if (tmp->up->a > tmp->a) {
@@ -410,7 +410,7 @@ void oper::predel(int num) {
 					}
 					else { root = tmp->right; }
 				}
-				else if ((tmp->right != NULL)&(tmp->left != NULL)) {
+				else if ((tmp->right != NULL) && (tmp->left != NULL)) {
 					el* temp = tmp->right;
 					while (temp->left != NULL) {
 						temp = temp->left;
@@ -449,7 +449,7 @@ void oper::predel(int num) {
 					}
 					else { root = NULL; }
 				}
-				if (tmp->a==root->a)
+				if (tmp->a == root->a)
 				tmp = NULL;
 				delete tmp;
 			}
@@ -471,20 +471,20 @@ void obhodCompar(oper::el* qt, oper::el* tt) {
 		if (tt->a != qt->a) {
 			srav = 1;
 		}
-		if ((qt->left != NULL) & (tt->left!=NULL)) {
+		if ((qt->left != NULL) && (tt->left!=NULL)) {
 			obhodCompar(qt->left, tt->left);
 		}
 		else {
-			if ((qt->left == NULL) & (tt->left == NULL)) {
+			if ((qt->left == NULL) && (tt->left == NULL)) {
 				int kek;
 			}
 			else { srav = 1; }
 		}
-		if ((qt->right != NULL) & (tt->right != NULL)) {
+		if ((qt->right != NULL) && (tt->right != NULL)) {
 			obhodCompar(qt->right, tt->right);
 		}
 		else {
-			if ((qt->right == NULL) & (tt->right == NULL)) {
+			if ((qt->right == NULL) && (tt->right == NULL)) {
 				int kek;
 			}
 			else { srav = 1; }
