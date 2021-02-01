@@ -1,5 +1,0 @@
-﻿  stdafx.cpp
-  ConsoleApplication24.cpp
-c:\users\nikita\documents\visual studio 2015\projects\дерево\consoleapplication24\consoleapplication24.cpp(479): warning C4101: kek: неиспользованная локальная переменная
-c:\users\nikita\documents\visual studio 2015\projects\дерево\consoleapplication24\consoleapplication24.cpp(488): warning C4101: kek: неиспользованная локальная переменная
-  ConsoleApplication24.vcxproj -> C:\Users\Nikita\Documents\Visual Studio 2015\Projects\ДЕРЕВО\Debug\ConsoleApplication24.exe
